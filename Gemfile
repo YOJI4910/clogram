@@ -53,6 +53,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # linter for slim
+  gem 'slim_lint'
 end
 
 group :test do
@@ -73,3 +75,8 @@ gem 'html2slim'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+# bootstrap v4
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
+# fontawesome
+gem 'font-awesome-sass', '~> 5.11.2'

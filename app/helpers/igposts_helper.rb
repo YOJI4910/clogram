@@ -1,0 +1,2 @@
+module IgpostsHelper
+end

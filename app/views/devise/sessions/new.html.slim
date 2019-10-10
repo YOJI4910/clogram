@@ -1,0 +1,26 @@
+.login-block
+  - if devise_mapping.omniauthable?
+  - resource_class.omniauth_providers.each do |provider|
+    = link_to omniauth_authorize_path(resource_name, provider), class:'facebook-btn' do
+      = icon'fab', 'facebook-square'
+      |   #{OmniAuth::Utils.camelize(provider)}でログイン
+  / ------ または -------
+  .div-wrapper
+    .div-line
+    .div-msg または
+    .div-line
+  / アドレスとパスワードでログイン
+  = form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'login-form'}) do |f|
+    .field
+      = f.email_field :email, placeholder: "メールアドレス", autofocus: true, autocomplete: "email", class:'input-field'
+    .field
+      = f.password_field :password, placeholder: "パスワード", autocomplete: "current-password", class:'input-field'
+    - if devise_mapping.rememberable?
+      .field
+        = f.check_box :remember_me
+        = f.label :remember_me, class:'remember-label'
+    .actions
+      = f.submit "ログインする", class:'btn btn-primary login-btn'
+    
+    .links-block
+      = render "devise/shared/links"

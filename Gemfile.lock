@@ -48,10 +48,16 @@ GEM
       io-like (~> 0.3.0)
     arel (9.0.0)
     ast (2.4.0)
+    autoprefixer-rails (9.6.4)
+      execjs
     bcrypt (3.1.13)
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
+    bootstrap (4.3.1)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 1.14.3, < 2)
+      sassc-rails (>= 2.0.0)
     builder (3.2.3)
     byebug (11.0.1)
     capybara (3.29.0)
@@ -84,6 +90,8 @@ GEM
     faraday (0.16.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.11.1)
+    font-awesome-sass (5.11.2)
+      sassc (>= 1.11)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hashie (3.6.0)
@@ -96,6 +104,10 @@ GEM
     jaro_winkler (1.5.3)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
+    jquery-rails (4.3.5)
+      rails-dom-testing (>= 1, < 3)
+      railties (>= 4.2.0)
+      thor (>= 0.14, < 2.0)
     jwt (2.2.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -139,6 +151,7 @@ GEM
     parallel (1.17.0)
     parser (2.6.5.0)
       ast (~> 2.4.0)
+    popper_js (1.14.5)
     powerpack (0.1.2)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -216,6 +229,14 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sassc (2.2.1)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selenium-webdriver (3.142.6)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
@@ -226,6 +247,10 @@ GEM
       actionpack (>= 3.1)
       railties (>= 3.1)
       slim (>= 3.0, < 5.0)
+    slim_lint (0.18.0)
+      rubocop (>= 0.50.0)
+      slim (>= 3.0, < 5.0)
+      sysexits (~> 1.1)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -237,6 +262,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sysexits (1.2.0)
     temple (0.8.2)
     thor (0.20.3)
     thread_safe (0.3.6)
@@ -268,13 +294,16 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
+  bootstrap (~> 4.3.1)
   byebug
   capybara (>= 2.15)
   chromedriver-helper
   devise
   dotenv-rails
+  font-awesome-sass (~> 5.11.2)
   html2slim
   jbuilder (~> 2.5)
+  jquery-rails
   listen (>= 3.0.5, < 3.2)
   mysql2 (>= 0.4.4, < 0.6.0)
   omniauth
@@ -288,6 +317,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   selenium-webdriver
   slim-rails
+  slim_lint
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

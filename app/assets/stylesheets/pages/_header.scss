@@ -1,0 +1,21 @@
+.header {
+  .header-tit {
+      display: inline-block;
+      margin: 0 auto;
+
+      .header-logo {
+        text-decoration: none;
+        color: #fff;
+        font-size: 2.5rem;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+  }
+}
+
+.debug-box {
+  position: absolute;
+  bottom: 50px;
+}
