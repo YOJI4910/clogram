@@ -1,4 +1,20 @@
-header.header
-  nav.navbar.bg-dark
+header.header.bg-dark
+  nav
     h1.header-tit
-      = link_to "Instaclone", root_path, class:'header-logo'
+      = icon 'fas', 'home', class:'home-icon'
+      |  | 
+      = link_to "Clogram", root_path, class:'header-logo'
+    .header-right
+      / 通知アイコン
+      = link_to notifications_path do
+        - if unchecked_notifications&.any?
+          = icon('far', 'bell', class:'notification-on')
+        - else
+          = icon('far', 'bell', class:'notification-off')
+      / マイページアイコン
+      = link_to gravatar_for(current_user), user_path(current_user) if current_user.present?
+      / ログアウト
+      = link_to "Logout", destroy_user_session_path, method: :delete, class:'logout-btn' if current_user.present?
+
+//header分の空スペース
+.header-space

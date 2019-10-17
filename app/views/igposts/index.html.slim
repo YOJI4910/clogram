@@ -1,2 +1,4 @@
-h1 Igposts#index
-p Find me in app/views/igposts/index.html.slim
+section.igposts
+  .inner
+    = render partial: 'igpost_card'
+    == pagy_bootstrap_nav(@pagy) if @pagy.pages > 1

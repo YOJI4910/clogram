@@ -1,2 +1,8 @@
-h1 Igposts#new
-p Find me in app/views/igposts/new.html.slim
+section.new-pic
+  h1 写真を投稿
+  = form_with model: @igpost, local: true do |f|
+    .form-group.edit-form
+      = f.label '投稿画像を選ぼう', class: 'new-pic-form-label'
+      = f.file_field :image, accept: 'image/jpeg, image/png', class: 'form-control'
+    
+    = f.submit '投稿する', class: 'btn btn-primary' 

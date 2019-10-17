@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
@@ -24,6 +22,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+  def edit_profile
+  end
+
+  def update_profile
+    current_user.assign_attributes(account_update_params)
+    if current_user.save
+      redirect_to user_url(current_user), notice: 'パスワードを更新しました'
+    else
+      render "edit_profile"
+    end
+  end
+
   # DELETE /resource
   # def destroy
   #   super
@@ -38,7 +48,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
+
+  def configure_account_update_params
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :user_name, :sex, :phone_number, :self_infro, :web_site])
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params

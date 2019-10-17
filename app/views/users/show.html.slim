@@ -1,2 +1,52 @@
-h1 Users#show
-p Find me in app/views/users/show.html.slim
+section.show-header
+  .inner
+    .show-avatar
+      = gravatar_for @user
+    .show-info
+      h2= @user.user_name
+      - if @user != current_user
+        #follow-wrapper
+          = render partial: 'follow', locals: { user: @user }
+      - else
+        .edit-btn
+          = link_to "プロフィールを編集", edit_profile_path, class: "btn btn-primary"
+
+section.show-intro
+  .inner
+    h3= @user.name
+    p= @user.self_intro
+    p= @user.web_site
+
+section.show-counter
+  ul
+    li= "投稿#{@user.igposts.count}件"
+    li= "フォロワー#{@user.followers.count}人"
+    li= "#{@user.followings.count}人をフォロー中"
+
+section.pics-sec
+  .inner
+    ul.show-switch.nav.nav-tabs
+      / タブ uesrが投稿した写真
+      li.nav-item
+        a href="#my-content" class="nav-link #{ 'active' unless params[:active_tab] == 'favs' }" data-toggle="tab" 投稿したpic
+      / タブ userがファボした写真
+      li.nav-item
+        a href="#fav-content" class="nav-link #{ 'active' if params[:active_tab] == 'favs' }" data-toggle="tab" ファボしたpic
+
+    .tab-content
+      / uesrが投稿した写真
+      div id="my-content" class="tab-pane #{ 'active' unless params[:active_tab] == 'favs' }"
+        .show-pics
+          - @my_pics.each_slice(3) do |pic1, pic2, pic3|
+            .show-row
+              .show-col= image_tag(pic1.image.url) unless pic1.nil?
+              .show-col= image_tag(pic2.image.url) unless pic2.nil?
+              .show-col= image_tag(pic3.image.url) unless pic3.nil?
+      / userがファボした写真
+      div id="fav-content" class="tab-pane #{ 'active' if params[:active_tab] == 'favs' }"
+        .show-pics
+          - @fav_pics.each_slice(3) do |pic1, pic2, pic3|
+            .show-row
+              .show-col= image_tag(pic1.image.url) unless pic1.nil?
+              .show-col= image_tag(pic2.image.url) unless pic2.nil?
+              .show-col= image_tag(pic3.image.url) unless pic3.nil?
