@@ -1,20 +1,20 @@
-.result-sec{
-  .inner{
-    .result-pics{
+.result-sec {
+  .inner {
+    .result-pics {
       display: flex;
       flex-direction: column;
       padding: 5px;
 
-      .result-row{
+      .result-row {
         display: flex;
         width: 100%;
         margin-bottom: 10px;
 
-        .result-col{
+        .result-col {
           margin-right: 5px;
-          width: calc(100%/3 - 10px/3);
+          width: calc(100% / 3 - 10px / 3);
 
-          &:last-child{
+          &:last-child {
             margin-right: 0;
           }
         }

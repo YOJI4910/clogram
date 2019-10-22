@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     # 編集するコントローラーを以下に記載
     # registrations: 'users/registrations',
     omniauth_callbacks: 'users/omniauth_callbacks',
-    registrations: 'users/registrations_controller'
+    registrations: 'users/registrations_controller',
   }
 
   devise_scope :user do
@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     delete "logout", to: "users/sessions#destroy", as: :destroy_user_session
   end
 
-  resources :users, only:[:show, :destroy] do
+  resources :users, only: [:show, :destroy] do
     resource :relationships, only: [:create, :destroy]
     get :follows, on: :member # ex) /users/2/follows = user2のフォロー一覧
     get :followers, on: :member # ex) /users/2/followers = user2のフォロワー一覧

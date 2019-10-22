@@ -28,9 +28,6 @@
     }
   }
 
-  &-pic {
-  }
-
   &-control {
     padding: 5px 20px;
 
@@ -51,37 +48,37 @@
   }
 }
 
-.show-comment{
+.show-comment {
   max-width: 735px;
   margin: 0 auto;
 
-  .comment-form-wrapper{
+  .comment-form-wrapper {
     width: 95%;
     margin: 0 auto;
     margin-bottom: 10px;
-    form{
+    form {
       border-top: 1px solid #e6e6e6;
       border-bottom: 1px solid #e6e6e6;
       border-radius: 3px;
       display: flex;
 
-      .form-group{
+      .form-group {
         width: 90%;
         margin: 0;
       }
 
-      .btn{
+      .btn {
         font-size: 1.4rem;
         color: #3498db;
       }
     }
-    .comment-text-area{
+    .comment-text-area {
       border: none;
       resize: none;
     }
   }
 
-  &-area{
+  &-area {
     & > div {
       display: flex;
       align-items: center;
@@ -89,11 +86,11 @@
       margin: 0 auto;
       padding: 8px;
       border-bottom: 1px solid #e6e6e6;
-      
-      p{
+
+      p {
         margin-bottom: 0;
 
-        &:first-of-type{
+        &:first-of-type {
           font-weight: 700;
           margin-right: 20px;
         }

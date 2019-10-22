@@ -82,7 +82,7 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 # fontawesome
 gem 'font-awesome-sass', '~> 5.11.2'
-#ページネーション
+# ページネーション
 gem 'pagy'
 
 gem 'rails-i18n', '~> 5.1'

@@ -1,5 +1,4 @@
 class Notification < ApplicationRecord
-  default_scope -> { order(created_at: :desc) }
   # optional: true => nilを許可
   belongs_to :igpost, optional: true
   belongs_to :comment, optional: true

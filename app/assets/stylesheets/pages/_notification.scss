@@ -1,23 +1,23 @@
-.notification-wrapper{
+.notification-wrapper {
   padding: 5px;
-  .notification{
+  .notification {
     display: flex;
     align-items: center;
     border-bottom: 1px solid #ecf0f1;
 
-    &-avatar{
+    &-avatar {
       margin-right: 20px;
 
-      .gravatar{
+      .gravatar {
         border-radius: 50%;
         width: 50px;
         min-width: 50px;
       }
     }
 
-    &-msg{
+    &-msg {
       width: 100%;
-      .notification-time{
+      .notification-time {
         text-align: right;
       }
     }

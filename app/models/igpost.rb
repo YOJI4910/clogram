@@ -33,7 +33,14 @@ class Igpost < ApplicationRecord
   # 投稿画像がfavされた時の通知メソッド
   def create_notification_fav!(current_user)
     # すでにfavされているか検索
-    temp = Notification.where(["visitor_id = ? and visited_id = ? and igpost_id = ? and action = ? ", current_user.id, self.user_id, self.id, 'fav'])
+    temp = Notification.where([
+      "visitor_id = ? and visited_id = ? and igpost_id = ? and action = ? ",
+      current_user.id,
+      self.user_id,
+      self.id,
+      'fav',
+    ])
+
     # いいねされていない場合のみ、通知レコードを作成
     if temp.blank?
       notification = current_user.active_notifications.new(

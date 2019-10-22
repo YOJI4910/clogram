@@ -4,24 +4,27 @@
   position: fixed;
   top: 0;
   left: 0;
+
   nav {
     display: flex;
     justify-content: space-between;
     height: 40px;
     width: 90%;
     margin: 0 auto;
-    .header-tit {
-        color: #fff;
-        line-height: 40px;
-        &:hover {
-          opacity: 0.8;
-        }
 
-        .header-logo {
-          text-decoration: none;
-          font-size: 2.5rem;
-          color: #fff;
-        }
+    .header-tit {
+      color: #fff;
+      line-height: 40px;
+      
+      &:hover {
+        opacity: 0.8;
+      }
+
+      .header-logo {
+        text-decoration: none;
+        font-size: 2.5rem;
+        color: #fff;
+      }
     }
 
     .header-right {
@@ -30,21 +33,21 @@
       display: flex;
       align-items: center;
 
-      a{
+      a {
         display: block;
         text-decoration: none;
       }
 
-      .notification-off{
+      .notification-off {
         color: #fff;
       }
 
-      .notification-on{
+      .notification-on {
         position: relative;
         color: #fff;
 
-        &::after{
-          content:'';
+        &::after {
+          content: "";
           width: 1rem;
           height: 1rem;
           border-radius: 50%;
@@ -62,7 +65,7 @@
         margin-left: 15px;
       }
 
-      .logout-btn{
+      .logout-btn {
         font-size: 1.4rem;
         line-height: 25px;
         color: #000;
@@ -72,7 +75,7 @@
         margin-left: 15px;
         padding: 0 5px;
 
-        &:hover{
+        &:hover {
           opacity: 0.8;
         }
       }
@@ -89,34 +92,34 @@
   text-align: center;
   font-size: 1.8rem;
 
-  &__alert{
+  &__alert {
     background: #c0392b;
     opacity: 0.8;
   }
-  &__notice{
+  &__notice {
     background: #3498db;
     opacity: 0.8;
   }
 }
 
-.search-wrapper{
+.search-wrapper {
   height: 26px;
   margin-right: 20px;
-  
-  form{
+
+  form {
     display: flex;
     align-items: center;
     border: none;
   }
 
-  input{
+  input {
     height: 24px;
     padding: 0;
     font-size: 1.8rem;
     border: none;
   }
-  
-  .search-btn{
+
+  .search-btn {
     width: 24px;
     height: 24px;
     border: none;
