@@ -5,6 +5,8 @@ header.header.bg-dark
       |  | 
       = link_to "Clogram", root_path, class:'header-logo'
     .header-right
+      / 検索フォーム
+      = render 'igposts/search_form' if user_signed_in?
       / 通知アイコン
       = link_to notifications_path do
         - if unchecked_notifications&.any?

@@ -1,0 +1,24 @@
+.result-sec{
+  .inner{
+    .result-pics{
+      display: flex;
+      flex-direction: column;
+      padding: 5px;
+
+      .result-row{
+        display: flex;
+        width: 100%;
+        margin-bottom: 10px;
+
+        .result-col{
+          margin-right: 5px;
+          width: calc(100%/3 - 10px/3);
+
+          &:last-child{
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

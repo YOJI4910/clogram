@@ -1,0 +1,2 @@
+$("#igpost-modal").html("<%= escape_javascript(render partial: 'detail', locals: { igpost: @igpost, comments: @comments }) %>")
+$("#igpost-modal").modal("show")

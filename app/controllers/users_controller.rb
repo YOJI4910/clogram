@@ -1,21 +1,6 @@
 class UsersController < ApplicationController
-  def index
-  end
-
   def new
     @user = User.new
-  end
-
-  def create
-    # @user = User.new(user_params)
-    
-    # if @user.save
-    #   # 登録と同時にログイン
-    #   session[:user_id] = @user.id
-    #   redirect_to root_url, notice:"ユーザー「#{@user.name}」を登録しました。"
-    # else
-    #   render :new
-    # end
   end
 
   def show
@@ -24,6 +9,9 @@ class UsersController < ApplicationController
     @fav_pics = @user.favorite_igposts.order(id: "DESC")
   end
 
-  def edit
+  def destroy
+    user = User.find(params[:id])
+    user.destroy
+    redirect_to new_user_session_url, notice: "退会しました。"
   end
 end

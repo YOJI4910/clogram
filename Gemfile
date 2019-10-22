@@ -86,3 +86,5 @@ gem 'font-awesome-sass', '~> 5.11.2'
 gem 'pagy'
 
 gem 'rails-i18n', '~> 5.1'
+# 検索機能
+gem 'ransack'

@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   devise_for :users, skip: [:sessions, :registrations, :signups], controllers: {
     # 編集するコントローラーを以下に記載
     # registrations: 'users/registrations',
-    omniauth_callbacks: 'users/omniauth_callbacks'
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    registrations: 'users/registrations_controller'
   }
 
   devise_scope :user do
@@ -19,13 +20,13 @@ Rails.application.routes.draw do
     get "users/edit", to: "users/registrations#edit", as: :edit_user_registration
     patch "users", to: "users/registrations#update", as: nil
     # ユーザー削除
-    delete 'users' => 'users/registrations#destroy', as: :destroy_user_registration
+    # delete 'users' => 'users/registrations#destroy', as: :destroy_user_registration
     get "login", to: "users/sessions#new", as: :new_user_session
     post "login", to: "users/sessions#create", as: :user_session
     delete "logout", to: "users/sessions#destroy", as: :destroy_user_session
   end
 
-  resources :users, only:[:show] do
+  resources :users, only:[:show, :destroy] do
     resource :relationships, only: [:create, :destroy]
     get :follows, on: :member # ex) /users/2/follows = user2のフォロー一覧
     get :followers, on: :member # ex) /users/2/followers = user2のフォロワー一覧
@@ -34,7 +35,10 @@ Rails.application.routes.draw do
   resources :igposts do
     resource :favorites, only: [:create, :destroy]
     resource :comments, only: [:create, :destroy]
+    get :detail, on: :member
   end
 
   resources :notifications, only: :index
+
+  get "search", to: "igposts#search"
 end

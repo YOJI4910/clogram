@@ -1,3 +1,4 @@
+- provide(:title, "新規登録")
 h2
   | 新規ユーザー登録
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
@@ -45,6 +46,7 @@ h2
 
   p
     = "登録することで、Clogramの"
-    = link_to "#{利用規約、データに関するポリシー}に同意するものとします。", 
+    = link_to "利用規約、データに関するポリシー", policy_path
+    = "に同意するものとします。"
 
 = render "devise/shared/links"

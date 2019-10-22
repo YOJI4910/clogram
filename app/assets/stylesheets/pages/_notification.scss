@@ -1,0 +1,25 @@
+.notification-wrapper{
+  padding: 5px;
+  .notification{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ecf0f1;
+
+    &-avatar{
+      margin-right: 20px;
+
+      .gravatar{
+        border-radius: 50%;
+        width: 50px;
+        min-width: 50px;
+      }
+    }
+
+    &-msg{
+      width: 100%;
+      .notification-time{
+        text-align: right;
+      }
+    }
+  }
+}

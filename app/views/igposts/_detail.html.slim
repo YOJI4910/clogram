@@ -1,0 +1,21 @@
+div class="modal-dialog" role="document"
+  .modal-content
+    .modal-body
+      section.igpost-show
+        .igpost-show-user
+          .igpost-show-avatar= link_to gravatar_for(igpost.user), igpost.user
+          .igpost-show-name= link_to igpost.user.user_name, igpost.user
+        .igpost-show-pic
+          = image_tag(igpost.image.url)
+        .igpost-show-control
+            div id="fav-btn-#{igpost.id}" class="fav-btn"
+              = render partial: "favorite", locals: { igpost: igpost }
+            / comment投稿ページに付きリンクなしのcomment icon
+            .comment-btn
+              = icon 'far', 'comment', class:'igpost-icon'
+      section.show-comment
+        .show-comment-area
+          - comments.each do |comment|
+            div
+              p= comment.user.user_name
+              p= comment.body

@@ -1,0 +1,65 @@
+.igpost {
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  margin-bottom: 60px;
+
+  &-user {
+    display: flex;
+    padding: 5px;
+    align-items: center;
+
+    .user-avatar {
+      padding-left: 10px;
+
+      .gravatar {
+        height: 42px;
+        width: 42px;
+        border-radius: 50%;
+        padding: 2px;
+        border: 3px solid #fd79a8;
+      }
+    }
+    &-name {
+      margin-left: 10px;
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+    }
+  }
+  &-control {
+    padding: 10px 20px;
+
+    .fav-btn,
+    .comment-btn {
+      display: inline-block;
+      margin-left: 30px;
+      font-size: 2.5rem;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      .igpost-icon {
+        color: #000000;
+      }
+    }
+  }
+
+  &-comments{
+    padding: 5px;
+
+    .igpost-comment{
+      display: flex;
+
+      p {
+        margin-bottom: 0;
+
+        &:first-child{
+          font-weight: bold;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}

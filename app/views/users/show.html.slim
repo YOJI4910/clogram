@@ -1,3 +1,5 @@
+- provide(:title, "ユーザーページ")
+
 section.show-header
   .inner
     .show-avatar
@@ -9,13 +11,14 @@ section.show-header
           = render partial: 'follow', locals: { user: @user }
       - else
         .edit-btn
-          = link_to "プロフィールを編集", edit_profile_path, class: "btn btn-primary"
+          = link_to "プロフィール編集", edit_profile_path, class: "btn btn-primary"
+          = link_to "アカウント削除", user_path(@user), method: :delete, class:"btn btn-danger ml-3"
 
 section.show-intro
   .inner
     h3= @user.name
     p= @user.self_intro
-    p= @user.web_site
+    p.text-muted= @user.web_site
 
 section.show-counter
   ul
@@ -39,14 +42,17 @@ section.pics-sec
         .show-pics
           - @my_pics.each_slice(3) do |pic1, pic2, pic3|
             .show-row
-              .show-col= image_tag(pic1.image.url) unless pic1.nil?
-              .show-col= image_tag(pic2.image.url) unless pic2.nil?
-              .show-col= image_tag(pic3.image.url) unless pic3.nil?
+              .show-col= link_to image_tag(pic1.image.url), detail_igpost_path(pic1), remote: true unless pic1.nil?
+              .show-col= link_to image_tag(pic2.image.url), detail_igpost_path(pic2), remote: true unless pic2.nil?
+              .show-col= link_to image_tag(pic3.image.url), detail_igpost_path(pic3), remote: true unless pic3.nil?
       / userがファボした写真
       div id="fav-content" class="tab-pane #{ 'active' if params[:active_tab] == 'favs' }"
         .show-pics
           - @fav_pics.each_slice(3) do |pic1, pic2, pic3|
             .show-row
-              .show-col= image_tag(pic1.image.url) unless pic1.nil?
-              .show-col= image_tag(pic2.image.url) unless pic2.nil?
-              .show-col= image_tag(pic3.image.url) unless pic3.nil?
+              .show-col= link_to image_tag(pic1.image.url), detail_igpost_path(pic1), remote: true unless pic1.nil?
+              .show-col= link_to image_tag(pic2.image.url), detail_igpost_path(pic2), remote: true unless pic2.nil?
+              .show-col= link_to image_tag(pic3.image.url), detail_igpost_path(pic3), remote: true unless pic3.nil?
+      
+#igpost-modal
+        

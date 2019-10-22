@@ -33,4 +33,8 @@ $(function() {
     // comment areaの先頭に挿入
     $('.show-comment-area').prepend('<div><p>' + e.detail[0][1] + '</p>'+'<p>' + e.detail[0][0] + '</p></div>');
   })
+
+  $(document).on('click', '.modal-backdrop', function() {
+    $("#igpost-modal").modal("hide");
+  })
 })

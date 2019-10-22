@@ -1,0 +1,6 @@
+- if igpost.favorited_by?(current_user)
+  / ファボ済の時の表示
+  = link_to icon('fas', 'bookmark', class: "igpost-icon"), igpost_favorites_path(igpost.id), method: :delete, remote: true
+- else
+  / 未ファボの時の表示
+  = link_to icon('far', 'bookmark', class: "igpost-icon"), igpost_favorites_path(igpost.id), method: :post, remote: true

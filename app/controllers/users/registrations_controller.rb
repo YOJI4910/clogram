@@ -36,7 +36,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # DELETE /resource
   # def destroy
-  #   super
+  #  super
   # end
 
   # GET /resource/cancel
@@ -73,4 +73,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  # 新規ユーザー登録後のリダイレクト先を個別ページに変更
+  def after_sign_in_path_for(resource)
+    case resource
+    when User
+      user_path(resource) || root_path
+    end
+  end
 end

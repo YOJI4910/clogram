@@ -22,10 +22,12 @@ class IgpostsController < ApplicationController
     end
   end
 
-  def edit
+  def detail
+    @igpost = Igpost.find(params[:id])
+    @comments = @igpost.comments.order(id: "DESC")
   end
 
-  def destroy
+  def search
   end
 
   private

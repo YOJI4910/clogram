@@ -1,7 +1,13 @@
 class User < ApplicationRecord
-  devise :omniauthable, omniauth_providers: [:facebook]
 
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
+  # バリデーション: 名前とユーザー名は必須
+  with_options presence: true do
+    validates :name
+    validates :user_name
+  end
+
+  devise :database_authenticatable, :registerable, :recoverable, 
+          :rememberable, :validatable, :omniauthable # , omniauth_providers: [:facebook]
 
   has_many :igposts, dependent: :destroy
 

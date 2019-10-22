@@ -1,0 +1,10 @@
+section.result-sec
+  .inner
+    h1 検索結果
+    .result-pics
+      - @user_results.each do |user|
+        - user.igposts.each_slice(3) do |pic1, pic2, pic3|
+          .result-row
+            .result-col= link_to image_tag(pic1.image.url), detail_igpost_path(pic1), remote: true unless pic1.nil?
+            .result-col= link_to image_tag(pic2.image.url), detail_igpost_path(pic2), remote: true unless pic2.nil?
+            .result-col= link_to image_tag(pic3.image.url), detail_igpost_path(pic3), remote: true unless pic3.nil?

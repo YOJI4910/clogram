@@ -1,68 +1,92 @@
-.login-block {
-  display: inline-block;
-  position: absolute;
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70vw;
+.login-sec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  .login-tit {
+  .lp-block{
+    width: 50%;
+    max-width: 500px;
     text-align: center;
-  }
+    padding: 20px;
 
-  .facebook-btn {
-    display: block;
-    background: #3498db;
-    color: #fff;
-    width: 100%;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 2px;
-    text-decoration: none;
-    &:hover {
-      opacity: 0.9;
+    @media screen and (max-width: 480px) {
+      display: none;
     }
   }
 
-  .div-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 20px;
-    padding-bottom: 10px;
+  .login-block {
+    width: 50%;
+    max-width: 500px;
+    padding: 20px;
 
-    .div-line {
-      height: 1px;
-      width: 35%;
-      background: #cccccc;
+    @media screen and (max-width: 480px) {
+      width: 100%;
     }
 
-    .div-msg {
-      color: #999;
-      font-weight: 600;
-      margin: 0 1.8rem;
+    .login-tit {
+      text-align: center;
+    }
+
+    .facebook-btn {
+      display: block;
+      background: #3498db;
+      color: #fff;
+      width: 100%;
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 2px;
+      font-size: 1.6rem;
+      text-decoration: none;
+      &:hover {
+        opacity: 0.9;
+      }
+
+      span {
+        font-size: 1.6rem;
+        margin-bottom: 0;
+      }
+    }
+
+    .div-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+      padding-bottom: 10px;
+
+      .div-line {
+        height: 1px;
+        width: 35%;
+        background: #cccccc;
+      }
+
+      .div-msg {
+        color: #999;
+        font-weight: 600;
+        margin: 0 1.8rem;
+      }
+    }
+
+    .field {
+      margin-top: 10px;
+    }
+
+    .input-field {
+      width: 100%;
+    }
+
+    .remember-label {
+      margin-left: 5px;
+    }
+
+    .login-btn {
+      width: 100%;
+      font-size: 1.6rem;
     }
   }
 
-  .field {
+  .links-block {
     margin-top: 10px;
+    font-size: 1.2rem;
   }
-
-  .input-field {
-    width: 100%;
-  }
-
-  .remember-label {
-    margin-left: 5px;
-  }
-
-  .login-btn {
-    width: 100%;
-    font-size: 1.4rem;
-  }
-}
-
-.links-block {
-  margin-top: 10px;
-  font-size: 1.2rem;
 }

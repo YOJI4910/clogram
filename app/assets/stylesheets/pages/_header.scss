@@ -99,6 +99,36 @@
   }
 }
 
+.search-wrapper{
+  height: 26px;
+  margin-right: 20px;
+  
+  form{
+    display: flex;
+    align-items: center;
+    border: none;
+  }
+
+  input{
+    height: 24px;
+    padding: 0;
+    font-size: 1.8rem;
+    border: none;
+  }
+  
+  .search-btn{
+    width: 24px;
+    height: 24px;
+    border: none;
+    padding: 0;
+
+    i {
+      display: block;
+      font-size: 2rem;
+    }
+  }
+}
+
 .debug-box {
   height: 180px;
 }

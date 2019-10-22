@@ -1,0 +1,22 @@
+- @igposts.each do |igpost|
+  .igpost
+    .igpost-user
+      .user-avatar= link_to gravatar_for(igpost.user), igpost.user
+      .igpost-user-name= link_to igpost.user.user_name, igpost.user
+    .igpost-pic
+      = image_tag(igpost.image.url, size:'600x600')
+    .igpost-control
+      div id="fav-btn-#{igpost.id}" class="fav-btn"
+        = render partial: "favorite", locals: { igpost: igpost }
+      .comment-btn
+        = link_to icon('far', 'comment', class:'igpost-icon'), igpost_path(igpost)
+
+    .igpost-comments
+      - com_num = igpost.comments.count
+      - if com_num > 3
+        = link_to "コメント#{com_num}件をすべて表示", igpost_path(igpost), 
+                      class:'d-block text-muted mb-2 text-decoration-none'
+      - igpost.comments.first(3).reverse_each do |comment|
+        .igpost-comment
+          p= comment.user.user_name
+          p= comment.body
