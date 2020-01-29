@@ -46,7 +46,8 @@ end
 # end
 
 # リレーション
-User.all.each do |user|
+users = User.all
+users.each do |user|
   followings = users.where.not(id: user.id).sample(6)
   followings.each { |followed| user.follow(followed) }
 end
