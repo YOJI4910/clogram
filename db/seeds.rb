@@ -46,8 +46,7 @@ User.all.each do |user|
 end
 
 # リレーション
-12.times do |follower|
-  (follower+1..12).each do |followed|
-    Relationship.create(follower_id:follower, following_id:followed)
-  end
+User.all.each do |user|
+  followings = users.where.not(id: user.id).sample(6)
+  followings.each { |followed| user.follow(followed) }
 end
