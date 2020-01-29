@@ -12,6 +12,9 @@ html
   body
     = render partial: 'layouts/header'
 
+    - unless user_signed_in?
+      = render 'layouts/sign_in_as_guest'
+
     - flash.each do |key, value|
       = content_tag(:div, value, class: "flash flash__#{key}")
 

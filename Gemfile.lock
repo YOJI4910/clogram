@@ -94,6 +94,8 @@ GEM
       railties (>= 3.2, < 6.1)
     erubi (1.9.0)
     execjs (2.7.0)
+    faker (2.10.1)
+      i18n (>= 1.6, < 2)
     faraday (0.16.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.11.1)
@@ -326,6 +328,7 @@ DEPENDENCIES
   chromedriver-helper
   devise
   dotenv-rails
+  faker
   font-awesome-sass (~> 5.11.2)
   html2slim
   jbuilder (~> 2.5)
