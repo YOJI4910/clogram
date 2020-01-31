@@ -20,6 +20,7 @@ html
 
     = yield
     - if user_signed_in?
+      .footer-spacer
       = render partial: 'layouts/footer'
 
     / .debug-box
