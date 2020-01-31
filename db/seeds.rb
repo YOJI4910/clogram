@@ -33,17 +33,17 @@ image_num_array=[*1..10].shuffle!
   )
 end
 
-# # ポスト
-# post_image_num_array=[*1..62].shuffle!
+# ポスト
+post_image_num_array=[*1..62].shuffle!
 
-# User.all.each do |user|
-#   5.times do |i|
-#     image_num = post_image_num_array.shift
-#     user.igposts.create(
-#       image: File.open("#{Rails.root}/db/image_seeds/#{image_num}.jpg")
-#     )
-#   end
-# end
+User.all.each do |user|
+  5.times do |i|
+    image_num = post_image_num_array.shift
+    user.igposts.create(
+      image: File.open("#{Rails.root}/db/image_seeds/#{image_num}.jpg")
+    )
+  end
+end
 
 # リレーション
 users = User.all
